@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Pearl — беседа, сходки, семья</title>
+  <meta name="description" content="The Pearl — уютная беседа в Telegram. Живой чат, регулярные сходки и люди, которые становятся семьёй.">
+  <meta name="theme-color" content="#050505">
+  <meta property="og:title" content="The Pearl — беседа, сходки, семья">
+  <meta property="og:description" content="Живой чат в Telegram, сходки в реальной жизни и своя семья.">
+  <meta property="og:image" content="assets/katana.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23000' stroke='%23fff' stroke-width='3'/%3E%3Ccircle cx='50' cy='50' r='22' fill='%23fff'/%3E%3Ctext x='50' y='59' font-size='28' font-family='Georgia,serif' font-weight='700' text-anchor='middle'%3E8%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@600;900&text=真珠一二三四五&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+  <!-- ============ ИНТРО: удар катаной ============ -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-half intro-top"><div class="intro-inner"></div></div>
+    <div class="intro-half intro-bot"><div class="intro-inner"></div></div>
+    <div class="intro-cut" id="introCut"></div>
+    <div class="intro-blade" id="introBlade"></div>
+    <button class="intro-skip" id="introSkip" type="button">пропустить</button>
+  </div>
+
+  <template id="introTpl">
+    <div class="intro-ball" data-ball8></div>
+    <div class="intro-word"><span>The</span> Pearl</div>
+    <div class="intro-sub">беседа · сходки · семья</div>
+    <div class="intro-kanji">真珠</div>
+  </template>
+
+  <!-- ============ НАВИГАЦИЯ ============ -->
+  <header class="nav" id="nav">
+    <a class="nav-logo" href="#top" aria-label="The Pearl — наверх">
+      <span class="nav-ball" data-ball8></span>
+      <span>The Pearl</span>
+    </a>
+    <nav class="nav-links" aria-label="Разделы">
+      <a href="#about">Кто мы</a>
+      <a href="#chat">Беседа</a>
+      <a href="#meets">Сходки</a>
+      <a href="#family">Семья</a>
+      <a href="#codex">Кодекс</a>
+    </nav>
+    <a class="nav-cta" data-tg href="#join">Вступить</a>
+  </header>
+
+  <div class="rail" aria-hidden="true"><span class="rail-ball" id="railBall"></span></div>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <div class="hero-katana" id="heroKatana" aria-hidden="true"></div>
+
+      <div class="hero-meta hero-meta-l">
+        <span>Telegram-сообщество</span>
+        <span>№ 08</span>
+      </div>
+      <div class="hero-kanji" aria-hidden="true">真珠</div>
+
+      <div class="hero-center">
+        <h1 class="hero-title">
+          <span class="ht-the"><span>The</span></span>
+          <span class="ht-pearl"><span>Pearl</span></span>
+        </h1>
+        <p class="hero-lead">
+          Беседа, из&nbsp;которой не&nbsp;хочется выходить. Сходки, после которых не&nbsp;хочется расходиться. Люди, которые становятся семьёй.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" data-tg href="#join">Вступить в беседу <i>→</i></a>
+          <a class="btn btn-ghost" href="#about">Что у нас происходит</a>
+        </div>
+      </div>
+
+      <div class="hero-bottom">
+        <span>Беседа</span><b></b><span>Сходки</span><b></b><span>Семья</span>
+      </div>
+      <a class="hero-scroll" href="#about" aria-label="Листать вниз"><span></span></a>
+    </section>
+
+    <!-- ============ БЕГУЩАЯ СТРОКА ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Беседа</span><i></i><span>Сходки</span><i></i><span>Семья</span><i></i><span>The Pearl</span><i></i><span class="jp">真珠</span><i></i>
+        <span>Беседа</span><i></i><span>Сходки</span><i></i><span>Семья</span><i></i><span>The Pearl</span><i></i><span class="jp">真珠</span><i></i>
+      </div>
+    </div>
+
+    <!-- ============ КТО МЫ ============ -->
+    <section class="section about" id="about">
+      <div class="wrap">
+        <div class="label" data-reveal><b>01</b>Кто мы</div>
+        <p class="statement" data-reveal>
+          Мы не&nbsp;паблик и&nbsp;не&nbsp;канал с&nbsp;рассылкой. Мы&nbsp;— <em>беседа</em>, где тебя помнят по&nbsp;имени, ждут на&nbsp;сходке и&nbsp;пишут «ты&nbsp;как?», если ты&nbsp;пропал.
+        </p>
+
+        <div class="pillars">
+          <article class="pillar" data-reveal>
+            <div class="pillar-ball" data-ball="1"></div>
+            <h3>Беседа</h3>
+            <p>Живой чат 24/7: мемы, споры о&nbsp;кино, голосовые на&nbsp;пять минут и&nbsp;разговоры до&nbsp;утра.</p>
+          </article>
+          <article class="pillar" data-reveal>
+            <div class="pillar-ball" data-ball="10"></div>
+            <h3>Сходки</h3>
+            <p>Бильярд, ночные прогулки, кино, выезды за&nbsp;город. Из&nbsp;чата&nbsp;— в&nbsp;реальную жизнь, и&nbsp;не&nbsp;раз в&nbsp;год.</p>
+          </article>
+          <article class="pillar" data-reveal>
+            <div class="pillar-ball" data-ball="8"></div>
+            <h3>Семья</h3>
+            <p>Здесь выслушают, поддержат и&nbsp;позовут. Новенькие становятся своими быстрее, чем кажется.</p>
+          </article>
+        </div>
+
+        <dl class="facts" data-reveal>
+          <div><dt>24/7</dt><dd>беседа не&nbsp;спит</dd></div>
+          <div><dt>8</dt><dd>наш шар и&nbsp;наш символ</dd></div>
+          <div><dt>1</dt><dd>семья, а&nbsp;не&nbsp;аудитория</dd></div>
+          <div><dt>∞</dt><dd>разговоров до&nbsp;утра</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <div class="slash" aria-hidden="true"><span></span></div>
+
+    <!-- ============ БЕСЕДА ============ -->
+    <section class="section chat" id="chat">
+      <div class="wrap chat-grid">
+        <div class="chat-copy">
+          <div class="label" data-reveal><b>02</b>Беседа</div>
+          <h2 class="h2" data-reveal>Беседа, которая <em>не&nbsp;спит</em></h2>
+          <p class="text" data-reveal>
+            Утром&nbsp;— «всем доброе», днём&nbsp;— мемы, ночью&nbsp;— разговоры о&nbsp;главном. Анонсы сходок, голосования за&nbsp;место встречи, общие фото и&nbsp;шутки, понятные только нам.
+          </p>
+          <ul class="tags" data-reveal>
+            <li>анонсы в&nbsp;закрепе</li>
+            <li>голосовалки за&nbsp;место</li>
+            <li>фотоархив сходок</li>
+            <li>тихий час? не&nbsp;слышали</li>
+          </ul>
+        </div>
+
+        <div class="tg" data-reveal aria-label="Пример переписки в беседе">
+          <div class="tg-head">
+            <span class="tg-ava" data-ball8></span>
+            <div class="tg-title">
+              <b>The Pearl</b>
+              <span id="tgStatus">беседа</span>
+            </div>
+            <span class="tg-dots" aria-hidden="true">⋮</span>
+          </div>
+          <div class="tg-body" id="tgBody"></div>
+          <div class="tg-input">
+            <span>Сообщение…</span>
+            <a class="tg-send" data-tg href="#join" aria-label="Написать в беседу">→</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ СХОДКИ (светлая секция) ============ -->
+    <section class="section meets invert" id="meets">
+      <div class="wrap">
+        <div class="meets-head">
+          <div class="label" data-reveal><b>03</b>Сходки</div>
+          <h2 class="h2" data-reveal>Из&nbsp;чата&nbsp;— <em>в&nbsp;жизнь</em></h2>
+          <p class="text" data-reveal>Встречаемся туда-сюда: по&nbsp;плану, по&nbsp;настроению и&nbsp;«кто сейчас в&nbsp;центре?». Даты и&nbsp;места&nbsp;— всегда в&nbsp;закрепе беседы.</p>
+        </div>
+
+        <ol class="meet-list">
+          <li class="meet" data-reveal>
+            <span class="meet-n">01</span>
+            <h3>Бильярдные вечера</h3>
+            <p>Кий, мел и&nbsp;спорные партии до&nbsp;закрытия. Новичков научим, профи&nbsp;— проверим.</p>
+            <span class="meet-tag">вечер</span>
+          </li>
+          <li class="meet" data-reveal>
+            <span class="meet-n">02</span>
+            <h3>Ночные прогулки</h3>
+            <p>Город после полуночи и&nbsp;разговоры, которые днём почему-то не&nbsp;случаются.</p>
+            <span class="meet-tag">ночь</span>
+          </li>
+          <li class="meet" data-reveal>
+            <span class="meet-n">03</span>
+            <h3>Кино и&nbsp;настолки</h3>
+            <p>Мафия, «Кодовые имена» и&nbsp;фильмы, о&nbsp;которых потом спорим неделю.</p>
+            <span class="meet-tag">выходные</span>
+          </li>
+          <li class="meet" data-reveal>
+            <span class="meet-n">04</span>
+            <h3>Выезды</h3>
+            <p>Шашлыки, озеро, палатки. Иногда&nbsp;— внезапно в&nbsp;другой город.</p>
+            <span class="meet-tag">сезон</span>
+          </li>
+          <li class="meet" data-reveal>
+            <span class="meet-n">05</span>
+            <h3>Спонтанные сборы</h3>
+            <p>«Кто свободен?»&nbsp;— и&nbsp;через час за&nbsp;одним столом уже полбеседы.</p>
+            <span class="meet-tag">внезапно</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ СЕМЬЯ: пирамида ============ -->
+    <section class="section family" id="family">
+      <div class="wrap">
+        <div class="family-head">
+          <div class="label" data-reveal><b>04</b>Семья</div>
+          <h2 class="h2" data-reveal>Пятнадцать шаров&nbsp;— <em>одна пирамида</em></h2>
+          <p class="text" data-reveal>В&nbsp;пирамиде восьмёрка всегда в&nbsp;центре, а&nbsp;держится всё на&nbsp;том, что шары стоят плотно друг к&nbsp;другу. У&nbsp;нас так&nbsp;же: у&nbsp;каждого своё место, и&nbsp;никто не&nbsp;катится сам по&nbsp;себе.</p>
+        </div>
+
+        <div class="table-wrap" data-reveal>
+          <svg class="table" id="table" viewBox="0 0 1000 560" role="img" aria-label="Бильярдный стол: кликните, чтобы ударить битком"></svg>
+          <div class="table-bar">
+            <span id="tableStatus">Кликни по&nbsp;столу&nbsp;— ударь битком</span>
+            <div class="table-btns">
+              <button class="btn btn-ghost btn-sm" id="btnBreak" type="button">Разбить</button>
+              <button class="btn btn-ghost btn-sm" id="btnRack" type="button">Собрать</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="slash" aria-hidden="true"><span></span></div>
+
+    <!-- ============ КОДЕКС ============ -->
+    <section class="section codex" id="codex">
+      <div class="wrap codex-grid">
+        <figure class="codex-fig" data-reveal>
+          <div class="codex-img"><img src="assets/katana.png" alt="Катана с цубой в виде дракона, чёрно-белая гравюра" width="634" height="635" loading="lazy"></div>
+          <figcaption><span>fig. 08</span>Клинок остаётся в&nbsp;ножнах</figcaption>
+        </figure>
+
+        <div class="codex-copy">
+          <div class="label" data-reveal><b>05</b>Кодекс</div>
+          <h2 class="h2" data-reveal>Кодекс <em>The&nbsp;Pearl</em></h2>
+          <ol class="rules">
+            <li data-reveal><span class="jp">一</span><div><h3>Уважение прежде всего</h3><p>Спорим о&nbsp;фильмах, а&nbsp;не&nbsp;о&nbsp;людях. Клинок остаётся в&nbsp;ножнах.</p></div></li>
+            <li data-reveal><span class="jp">二</span><div><h3>Своих не&nbsp;бросаем</h3><p>Пропал&nbsp;— напишем. Нужна помощь&nbsp;— соберёмся.</p></div></li>
+            <li data-reveal><span class="jp">三</span><div><h3>Что в&nbsp;беседе&nbsp;— остаётся в&nbsp;беседе</h3><p>Личное не&nbsp;выносим. Скриншоты&nbsp;— только мемов.</p></div></li>
+            <li data-reveal><span class="jp">四</span><div><h3>Без спама и&nbsp;рекламы</h3><p>Мы&nbsp;здесь ради людей, а&nbsp;не&nbsp;ради охватов.</p></div></li>
+            <li data-reveal><span class="jp">五</span><div><h3>Чат&nbsp;— только половина</h3><p>Вторая половина&nbsp;— вживую. Приходи на&nbsp;сходки.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ КАК ВСТУПИТЬ ============ -->
+    <section class="section join invert" id="join">
+      <div class="wrap">
+        <div class="label" data-reveal><b>06</b>Как попасть</div>
+        <div class="steps">
+          <div class="step" data-reveal>
+            <span class="step-n">01</span>
+            <h3>Жми «Вступить»</h3>
+            <p>Ссылка ведёт прямо в&nbsp;нашу беседу в&nbsp;Telegram.</p>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step-n">02</span>
+            <h3>Представься</h3>
+            <p>Пара слов о&nbsp;себе: как зовут, откуда, чем горишь. Стикер тоже засчитаем.</p>
+          </div>
+          <div class="step" data-reveal>
+            <span class="step-n">03</span>
+            <h3>Приходи на&nbsp;сходку</h3>
+            <p>Анонсы&nbsp;— в&nbsp;закрепе. Одна встреча&nbsp;— и&nbsp;ты&nbsp;уже свой.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final" id="final">
+      <div class="final-ball" data-ball8 data-look></div>
+      <h2 class="final-title" data-reveal>Восьмёрка&nbsp;— последний шар.<br><em>Твой ход.</em></h2>
+      <a class="btn btn-solid btn-lg" data-tg href="#join" data-reveal>Вступить в The Pearl <i>→</i></a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-brand">
+      <span class="footer-jp">真珠</span>
+      <span>The Pearl</span>
+    </div>
+    <p>Беседа · Сходки · Семья</p>
+    <div class="footer-links">
+      <a data-tg href="#join">Telegram</a>
+      <button type="button" id="replayIntro">Повторить удар</button>
+    </div>
+    <small>© 2026 The Pearl</small>
+  </footer>
+
+  <div class="grain" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
