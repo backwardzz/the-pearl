@@ -1642,6 +1642,112 @@ html:not(.js) .hero-lead, html:not(.js) .hero-actions { opacity: 1; transform: n
 }
 .sez-marq span { display: inline-block; animation: m-marq 22s linear infinite; }
 
+/* ---------- 06 · Диана: розовая анкета, луна и звёздное небо ---------- */
+.m-diana {
+  align-items: stretch;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 10%, #ffd0e6, transparent 50%),
+    radial-gradient(circle at 80% 90%, #ffd0e6, transparent 50%),
+    radial-gradient(circle at 90% 20%, #e9d5ff, transparent 40%),
+    #ffe4f0;
+  box-shadow: 0 10px 30px -12px rgba(255, 95, 168, .4);
+  color: #5a2142;
+  font-family: "Nunito", system-ui, sans-serif;
+}
+.m-diana:hover { box-shadow: 0 30px 70px -22px rgba(255, 95, 168, .7); }
+.dia-sky { position: absolute !important; inset: 0; z-index: -1; }
+.dia-sky i {
+  position: absolute;
+  font-style: normal;
+  font-size: calc(18px * var(--s, 1));
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 95, 168, .7);
+  animation: dia-twinkle 2.6s ease-in-out var(--t, 0s) infinite;
+}
+.m-diana:hover .dia-sky i { animation-duration: 1s; }
+@keyframes dia-twinkle { 50% { opacity: .25; transform: scale(.6) rotate(20deg); } }
+.dia-card {
+  position: relative;
+  margin-top: 22px;
+  padding: 26px 18px 20px;
+  border: 3px dashed #ffb3d6;
+  border-radius: 24px;
+  background: #fff7fb;
+  box-shadow: 0 12px 30px rgba(255, 95, 168, .25);
+  text-align: center;
+  transition: transform .6s var(--ease-out);
+}
+.dia-card > span { display: block; }
+.m-diana:hover .dia-card { transform: rotate(1deg) translateY(-3px); }
+.dia-moon, .dia-star {
+  position: absolute;
+  stroke: #fff;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  paint-order: stroke;
+  overflow: visible;
+  filter: drop-shadow(0 3px 4px rgba(160, 40, 100, .25));
+  animation: dia-float 6s ease-in-out infinite alternate;
+}
+.dia-moon { top: -26px; right: -12px; width: 62px; fill: #ffe27a; rotate: 18deg; }
+.dia-star { bottom: -20px; left: -12px; width: 48px; fill: #fff1a8; rotate: -14deg; animation-delay: -3s; }
+@keyframes dia-float { to { transform: translateY(-8px); } }
+.dia-ava {
+  display: grid !important;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 6px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff9ccc, #ff5fa8);
+  box-shadow: 0 0 0 4px #ffc2df, 0 8px 16px rgba(255, 95, 168, .3);
+  color: #fff;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+.dia-name { font: 400 min(54px, 15cqi)/1.25 "Pacifico", cursive; color: #ff5fa8; }
+.dia-sub { font-size: 12px; font-weight: 700; letter-spacing: .28em; text-transform: uppercase; color: #8d4670; }
+.dia-typed { margin-top: 10px; font-size: 15px; font-weight: 700; }
+.dia-typed b {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  background: #ff5fa8;
+  animation: m-blink 1s steps(1) infinite;
+}
+.dia-fields {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 2px dashed #ffc2df;
+}
+.dia-fields span { font-size: min(18px, 5.4cqi); font-weight: 800; line-height: 1.2; color: #d42f7f; }
+.dia-fields small {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #8d4670;
+}
+.dia-btn {
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ff5fa8, #8b45d6);
+  color: #fff;
+  font: 800 13px/1 "Nunito", sans-serif;
+  box-shadow: 0 6px 14px rgba(255, 95, 168, .4);
+}
+.m-diana .mcard-url { color: #8d4670; opacity: 1; }
+
 /* ---------- 08 · Ты: свободное место в пирамиде (стиль The Pearl) ---------- */
 .m-you {
   background:
@@ -1750,5 +1856,6 @@ html:not(.js) .hero-lead, html:not(.js) .hero-actions { opacity: 1; transform: n
   html { scroll-behavior: auto; }
   .grain, .marquee-track, .hero-scroll span { animation: none; }
   .aida-stars i, .ibra-smoke i, .asya-marq span, .sez-marq span, .sez-bubble { animation: none; }
+  .dia-sky i, .dia-moon, .dia-star, .dia-typed b { animation: none; }
   .js [data-reveal] { opacity: 1; transform: none; transition: none; }
 }
